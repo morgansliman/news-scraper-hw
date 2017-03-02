@@ -1,0 +1,26 @@
+{
+  "name": "news-scraper-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morgansliman/news-scraper-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morgansliman/news-scraper-hw/issues"
+  },
+  "homepage": "https://github.com/morgansliman/news-scraper-hw#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cheerio": "^0.22.0",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.5",
+    "request": "^2.79.0"
+  }
+}
