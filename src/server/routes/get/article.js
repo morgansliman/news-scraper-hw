@@ -5,7 +5,8 @@ const Article    = require('../../models/Article'),
 module.exports = (app) => {
 
 	app.get('/api/articles', (req, res) => {
-		controller.scrape()
-			.then(data => res.send(data));
+		controller
+			.getAllArticles()
+			.then(data => res.json(data));
 	});
 };

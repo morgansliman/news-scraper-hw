@@ -1,5 +1,5 @@
 angular
-	.module('starterApp', ['ngMaterial', 'users'])
+	.module('starterApp', ['ngSanitize', 'ngMaterial', 'users'])
 	.config(appConfig);
 
 function appConfig($mdThemingProvider, $mdIconProvider){

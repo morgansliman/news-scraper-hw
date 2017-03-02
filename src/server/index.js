@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname + '/../client')));
 mongoose.Promise = Promise;
 mongoose.set('debug', true);
 mongoose.connect('mongodb://localhost:27017/news');
-autoIncrement.initialize(mongoose.connection);
+// autoIncrement.initialize(mongoose.connection);
 mongoose.connection.once('open', () => {
 	console.log('Mongoose connection successful');
 });

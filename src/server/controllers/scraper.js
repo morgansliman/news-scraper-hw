@@ -7,7 +7,7 @@ const request  = require('request-promise-native'),
 
 const DEFAULT_URL = "https://thebests.kotaku.com/";
 
-function scrape(query) {
+function scrape(query='') {
 
 	// First, we grab the body of the html with request
 	// Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -25,13 +25,15 @@ function scrape(query) {
 					// Save an empty result object
 					let result = {};
 
+					result.next = $("div.load-more__button a").attr('href');
+
 					// Add the text, href, summary, and dataId of every link,
 					// and save them as properties of the result object
 					result.articleId = parseInt($(this).data('id'));
 					result.title = $(this).find('h1.entry-title a').html();
 					result.link = $(this).find('h1.entry-title a').attr('href');
 					result.summary = $(this).find('div.entry-summary p').html();
-					console.log(result);
+					console.log(JSON.parse(JSON.stringify(result)));
 
 					allResults.push(result);
 				}
@@ -42,4 +44,12 @@ function scrape(query) {
 		.catch(err => console.log(err));
 }
 
+function getAllArticles() {
+	return Article
+				.find({})
+				.populate('note')
+				.exec();
+}
+
+module.exports.getAllArticles = getAllArticles;
 module.exports.scrape = scrape;

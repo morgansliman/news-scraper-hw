@@ -22,9 +22,9 @@
     userService
           .loadAllUsers()
           .then( function( users ) {
-          	console.log(users);
-            // self.users    = [].concat(users);
-            // self.selected = users[0];
+          	console.log(users.data);
+            self.users    = [].concat(users.data);
+            self.selected = users.data[0];
           });
 
     // *********************************
