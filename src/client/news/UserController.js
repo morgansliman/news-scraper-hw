@@ -22,8 +22,9 @@
     userService
           .loadAllUsers()
           .then( function( users ) {
-            self.users    = [].concat(users);
-            self.selected = users[0];
+          	console.log(users);
+            // self.users    = [].concat(users);
+            // self.selected = users[0];
           });
 
     // *********************************

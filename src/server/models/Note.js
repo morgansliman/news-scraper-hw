@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const NoteSchema = new Schema(
 	{
-		title: {type: String},
-		body:  {type: String}
+		title:  {type: String},
+		body:   {type: String},
+		author: {type: String, default: 'Anonymous'}
 	}
 );
 
