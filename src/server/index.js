@@ -5,7 +5,7 @@ const express       = require('express'),
       mongoose      = require('mongoose'),
       autoIncrement = require('mongoose-auto-increment');
 
-const PORT = 8000,
+const PORT = process.env.PORT || 8000,
       app  = express();
 
 // Use morgan and body parser with our app
